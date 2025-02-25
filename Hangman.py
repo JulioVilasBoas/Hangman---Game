@@ -22,3 +22,13 @@ guess = input("Guess a letter: ").lower()
 #     else:
 #         print("Wrong")
 
+# TO DO 4: Create a placeholder with the same number of blanks as the chosen word and fill it with "_" 
+
+placeholder = ""
+
+for letter in chosen_word:
+    placeholder += "_"
+
+        
+            
+

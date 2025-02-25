@@ -1,6 +1,7 @@
 import random
 
 word_list = ['aardvark', 'baboon', 'camel']
+stages = ['Stage6', 'Stage5', 'Stage4', 'Stage3', 'Stage2', 'Stage1']
 
 chosen_word = random.choice(word_list)
 
@@ -22,8 +23,7 @@ while not game_over:
     display = ""
     guess = input("Guess a letter: ").lower()
     
-    if guess not in chosen_word:
-        lives -= 1
+        
         
     for letter in chosen_word:
         if guess == letter:
@@ -37,11 +37,17 @@ while not game_over:
             display += "_"
         
             
-    print(display)
+    print("\n" + display + "\n")
+    
+    if guess not in chosen_word:
+        lives -= 1
+        print(stages[lives])
+    
     #WIN CONDITION
     if "_" not in display:
         print("You Win!! :)")
         game_over = True
+        
     #LOSE CONDITION
     elif lives == 0:
         print("You lose! :(")
